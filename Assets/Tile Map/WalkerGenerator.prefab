@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7827412907878712394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2996743707611345557}
+  - component: {fileID: 2824717817173925915}
+  m_Layer: 0
+  m_Name: WalkerGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2996743707611345557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7827412907878712394}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2824717817173925915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7827412907878712394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e8ce4fda9677e47b181339573aab0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorTilemap: {fileID: 0}
+  wallTilemap: {fileID: 0}
+  cosmeticTilemap: {fileID: 0}
+  floorTile: {fileID: 11400000, guid: 1a896cd7bb13b3a418e6e0d9748aad59, type: 2}
+  wallTile: {fileID: 11400000, guid: 75e6dfe4390c9cd42a316b536a5f9f9f, type: 2}
+  cosmeticTile: {fileID: 11400000, guid: daffcdb20e70c5f4d9820a8bd9af1637, type: 2}
+  desiredFloorTiles: 1500
+  maxWalkers: 100
+  changeChance: 0.5
+  floorChunkSize: 2
+  wallThickness: 2
+  playerSpawnPrefab: {fileID: 7080957948416717683, guid: adb5aaea7c212cf47a601baaec557e0b,
+    type: 3}
+  destructiblePrefabs:
+  - {fileID: 4668269881481444354, guid: 4cc6da6680c4833458f52274f554a480, type: 3}
+  - {fileID: 4668269881481444354, guid: a6bf84ecfd5ca384dbef387da7b70cb2, type: 3}
+  - {fileID: 4668269881481444354, guid: 81b98570371015148983ad989a11d5c1, type: 3}
+  - {fileID: 4668269881481444354, guid: 411f5dcaaaf6f6641a8f60c9273db720, type: 3}
+  - {fileID: 4668269881481444354, guid: e7a4dad6217e4044c889cb59b0fd8707, type: 3}
+  - {fileID: 4668269881481444354, guid: 22af8bbb52f2da24f9d8de83643518ab, type: 3}
+  - {fileID: 4668269881481444354, guid: 22af8bbb52f2da24f9d8de83643518ab, type: 3}
+  - {fileID: 4668269881481444354, guid: 22af8bbb52f2da24f9d8de83643518ab, type: 3}
+  - {fileID: 4668269881481444354, guid: 22af8bbb52f2da24f9d8de83643518ab, type: 3}
+  - {fileID: 4668269881481444354, guid: 22af8bbb52f2da24f9d8de83643518ab, type: 3}
+  treePrefabs:
+  - {fileID: 6373611846932270980, guid: 935d36867f49b544c9a09817d6ac555b, type: 3}
+  - {fileID: 8104435965031418032, guid: 942c263b34a76234997cf97a8fdccb9b, type: 3}
+  - {fileID: 5848591955077681328, guid: 039681655aab91d4f8fab99f8fd3c9c6, type: 3}
+  - {fileID: 868288086149077028, guid: 07c8b7d7c57e5564094c7d85933f5242, type: 3}
+  - {fileID: 1016314392678115528, guid: 15fae86ed5e5d254b965dca4d935e269, type: 3}
+  enemyPrefabs:
+  - {fileID: 8072818964085442761, guid: 3d320249aafad5e429a8fd1b6a739d40, type: 3}
+  - {fileID: 7758246509544739893, guid: e952c956ec9e8d7479ab3d0588891a84, type: 3}
+  - {fileID: 2456425939241851587, guid: 71a1165169e4b5b4e980ffb938d987f9, type: 3}
+  - {fileID: 5761385989665961902, guid: e08319af8af5ac64f9cf514025d92835, type: 3}
+  enemyCount: 10
+  destructibleClusterCount: 10
+  treeCount: 35
+  shopPrefab: {fileID: 3455823668782334060, guid: c326562faa43c7f4386a726f573a4dea,
+    type: 3}
+  loadingScreen: {fileID: 0}
