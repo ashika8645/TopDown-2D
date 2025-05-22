@@ -15,5 +15,7 @@ public class BossSpawnTrigger : MonoBehaviour
 
         Vector3 pos = spawnPoint != null ? spawnPoint.position : transform.position;
         Instantiate(bossPrefab, pos, Quaternion.identity);
+
+        gameObject.tag = "Untagged";
     }
 }

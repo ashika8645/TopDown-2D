@@ -8,10 +8,22 @@ public class Pause : MonoBehaviour
     public GameObject pauseMenu, settingsMenu;
     public string sceneName;
     public bool toggle;
+    public static bool isGamePaused = false;
+
+    private void Start()
+    {
+        Canvas canvas = pauseMenu.GetComponentInParent<Canvas>();
+        if (canvas != null)
+        {
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.scaleFactor = 0.75f;
+            canvas.referencePixelsPerUnit = 16;
+        }
+    }
 
     void Update()
     {
-        if (Input.GetButtonDown("Escape"))
+        if (Input.GetButtonDown("Escape") || Input.GetKeyDown(KeyCode.JoystickButton7))
         {
 
             if (settingsMenu.activeSelf)
@@ -27,12 +39,14 @@ public class Pause : MonoBehaviour
                     pauseMenu.SetActive(true);
                     AudioListener.pause = true;
                     Time.timeScale = 0;
+                    isGamePaused = true;
                 }
                 else
                 {
                     pauseMenu.SetActive(false);
                     AudioListener.pause = false;
                     Time.timeScale = 1;
+                    isGamePaused = false;
                 }
 
             }

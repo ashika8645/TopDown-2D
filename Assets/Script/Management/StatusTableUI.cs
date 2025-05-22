@@ -10,7 +10,9 @@ public class StatusTableUI : MonoBehaviour
     public TMP_Text bowDamageText;
     public TMP_Text spellDamageText;
 
-    private bool isTabHeld = false;
+    public static bool isStatusTableOpen = false;
+
+    private float previousTimeScale;
 
     void Start()
     {
@@ -31,7 +33,9 @@ public class StatusTableUI : MonoBehaviour
 
     void ShowStatusTable()
     {
-        isTabHeld = true;
+        isStatusTableOpen = true;
+        previousTimeScale = Time.timeScale; 
+
         Time.timeScale = 0f;
         statusTablePanel.SetActive(true);
 
@@ -45,8 +49,12 @@ public class StatusTableUI : MonoBehaviour
 
     void HideStatusTable()
     {
-        isTabHeld = false;
-        Time.timeScale = 1f;
+        isStatusTableOpen = false;
         statusTablePanel.SetActive(false);
+
+        if (!Pause.isGamePaused)
+        {
+            Time.timeScale = 1f;
+        }
     }
 }
