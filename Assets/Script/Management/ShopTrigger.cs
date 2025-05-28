@@ -37,18 +37,20 @@ public class ShopTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetButtonDown("Attack"))
+        if (playerInRange && Input.GetButtonDown("Dash"))
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             if (enemies.Length == 0 && updateCardUI != null)
             {
+                Pause.isGamePaused = true;
                 updateCardUI.SetActive(true);
-                Time.timeScale = 0f; 
+                Time.timeScale = 0f;
             }
         }
 
-        if (updateCardUI != null && updateCardUI.activeSelf && Input.GetButtonDown("Escape"))
+        if (Input.GetButtonDown("Escape") || Input.GetKeyDown(KeyCode.JoystickButton1))
         {
+            Pause.isGamePaused = false;
             updateCardUI.SetActive(false);
             Time.timeScale = 1f;
         }

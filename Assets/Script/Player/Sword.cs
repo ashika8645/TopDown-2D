@@ -31,14 +31,17 @@ public class Sword : MonoBehaviour
 
     private void Attack()
     {
-        canAttack = false;
-        myAnimator.SetTrigger("Attack");
-        weaponCollider.gameObject.SetActive(true);
+        if (Pause.isGamePaused == false)
+        {
+            canAttack = false;
+            myAnimator.SetTrigger("Attack");
+            weaponCollider.gameObject.SetActive(true);
 
-        slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
-        slashAnim.transform.parent = this.transform.parent;
+            slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
+            slashAnim.transform.parent = this.transform.parent;
 
-        StartCoroutine(ResetAttackCooldown());
+            StartCoroutine(ResetAttackCooldown());
+        }
     }
 
     private IEnumerator ResetAttackCooldown()

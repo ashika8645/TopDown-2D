@@ -410,7 +410,7 @@ public class WalkerGenerator : MonoBehaviour
             if (usedPositions.Contains(pos) || IsNearRestrictedArea(pos) || cosmeticPositions.Contains(pos)) continue;
             usedPositions.Add(pos);
             GameObject prefab = treePrefabs[Random.Range(0, treePrefabs.Length)];
-            Instantiate(prefab, new Vector3(pos.x, pos.y, 6f), Quaternion.identity);
+            Instantiate(prefab, new Vector3(pos.x, pos.y, -0.1f), Quaternion.identity);
         }
 
         for (int i = 0; i < enemyCount && index < floorPositions.Count; i++, index++)

@@ -34,13 +34,16 @@ public class Staff : MonoBehaviour
 
     private void Update()
     {
-        TrackMouseIdle();
-
-        RotateSpellSpawnPoint();
-
-        if (Input.GetButtonDown("Attack") && canAttack)
+        if (Pause.isGamePaused == false)
         {
-            Attack();
+            TrackMouseIdle();
+
+            RotateSpellSpawnPoint();
+
+            if (Input.GetButtonDown("Attack") && canAttack)
+            {
+                Attack();
+            }
         }
     }
 

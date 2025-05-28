@@ -59,9 +59,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Dash"))
+        if (Pause.isGamePaused == false)
         {
-            Dash();
+            if (Input.GetButtonDown("Dash"))
+            {
+                Dash();
+            }
         }
     }
 

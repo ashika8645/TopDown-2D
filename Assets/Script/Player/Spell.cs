@@ -23,20 +23,23 @@ public class Spell : MonoBehaviour
 
     private void Update()
     {
-        lifeCheck();
-
-        DetectEnemyInFront();
-
-        if (closestEnemy != null)
+        if (Pause.isGamePaused == false)
         {
-            Vector3 directionToEnemy = (closestEnemy.position - transform.position).normalized;
-            targetDirection = Vector3.Lerp(targetDirection, directionToEnemy, Time.deltaTime * 5f);
+            lifeCheck();
+
+            DetectEnemyInFront();
+
+            if (closestEnemy != null)
+            {
+                Vector3 directionToEnemy = (closestEnemy.position - transform.position).normalized;
+                targetDirection = Vector3.Lerp(targetDirection, directionToEnemy, Time.deltaTime * 5f);
+            }
+
+            transform.position += targetDirection * speed * Time.deltaTime;
+
+            float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-
-        transform.position += targetDirection * speed * Time.deltaTime;
-
-        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void DetectEnemyInFront()

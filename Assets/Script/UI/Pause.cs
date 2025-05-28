@@ -51,6 +51,10 @@ public class Pause : MonoBehaviour
 
             }
         }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+        {
+            pauseMenu.SetActive(false);
+        }
     }
 
     public void toSettings()

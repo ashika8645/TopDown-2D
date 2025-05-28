@@ -21,22 +21,23 @@ public class StatusTableUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Status"))
+        if (Pause.isGamePaused == false)
         {
-            ShowStatusTable();
-        }
-        if (Input.GetButtonUp("Status"))
-        {
-            HideStatusTable();
+            if (Input.GetButtonDown("Status"))
+            {
+                ShowStatusTable();
+            }
+            if (Input.GetButtonUp("Status"))
+            {
+                HideStatusTable();
+            }
         }
     }
 
     void ShowStatusTable()
     {
         isStatusTableOpen = true;
-        previousTimeScale = Time.timeScale; 
 
-        Time.timeScale = 0f;
         statusTablePanel.SetActive(true);
 
         if (WeaponStatsManager.Instance != null)
@@ -51,10 +52,5 @@ public class StatusTableUI : MonoBehaviour
     {
         isStatusTableOpen = false;
         statusTablePanel.SetActive(false);
-
-        if (!Pause.isGamePaused)
-        {
-            Time.timeScale = 1f;
-        }
     }
 }
