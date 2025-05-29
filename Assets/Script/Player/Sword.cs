@@ -6,7 +6,7 @@ public class Sword : MonoBehaviour
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private Transform weaponCollider;
-     private float attackCooldown = 0.5f;
+     private float attackCooldown = 0.2f;
 
     private Player playerController;
     private Animator myAnimator;
